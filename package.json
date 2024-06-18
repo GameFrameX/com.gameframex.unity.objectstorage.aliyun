@@ -1,5 +1,5 @@
 {
-  "name": "com.alianblank.gameframex.unity.objectstorage.aliyun",
+  "name": "com.gameframex.unity.objectstorage.aliyun",
   "displayName": "Game Frame X Object Storage ALiYun OSS",
   "category": "Game Framework X",
   "description": "Game Frame X Object Storage ALiYun OSS Component",
@@ -9,8 +9,8 @@
     "Game Framework X"
   ],
   "repository": {
-    "name": "com.alianblank.gameframex.unity.objectstorage.aliyun",
-    "url": "https://github.com/AlianBlank/com.alianblank.gameframex.unity.objectstorage.aliyun.git",
+    "name": "com.gameframex.unity.objectstorage.aliyun",
+    "url": "https://github.com/AlianBlank/com.gameframex.unity.objectstorage.aliyun.git",
     "type": "git"
   },
   "author": {
