@@ -31,9 +31,11 @@ jobs:
           eval $(ssh-agent -s) && ssh-add ~/.ssh/id_rsa
           # 信任域名
           ssh-keyscan -H code.gitlink.org.cn >> ~/.ssh/known_hosts
+
       # 查看当前分支
       - name: Check current branch
         run: echo 当前分支：${{ github.ref_name }} ${{ github.Repository }}
+
       # 查看远端 地址
       - name: echo git url
         run: echo git@code.gitlink.org.cn:${{ github.Repository }}.git
