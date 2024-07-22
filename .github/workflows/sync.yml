@@ -33,7 +33,7 @@ jobs:
           ssh-keyscan -H code.gitlink.org.cn >> ~/.ssh/known_hosts
       # 查看当前分支
       - name: Check current branch
-        run: echo 当前分支：${{ github.ref.name }} ${{ github.Repository }}
+        run: echo 当前分支：${{ github.ref_name }} ${{ github.Repository }}
       # 查看远端 地址
       - name: echo git url
         run: echo git@code.gitlink.org.cn:${{ github.Repository }}.git
@@ -48,8 +48,8 @@ jobs:
 
       # 拉取
       - name: pull main
-        run: git pull --progress -v --no-rebase gitlink ${{ github.ref.name }} --tags --verbose
+        run: git pull --progress -v --no-rebase gitlink ${{ github.ref_name }} --tags --verbose
 
       # 推送主分支
       - name: push main
-        run: git push -u gitlink ${{ github.ref.name }} --tags --verbose
+        run: git push -u gitlink ${{ github.ref_name }} --tags --verbose
