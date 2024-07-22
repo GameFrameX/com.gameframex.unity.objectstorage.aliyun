@@ -48,7 +48,7 @@ jobs:
 
       # 拉取
       - name: pull main
-        run: git pull --rebase=false gitlink ${{ github.ref.name }} --tags --verbose
+        run: git pull --progress -v --no-rebase gitlink ${{ github.ref.name }} --tags --verbose
 
       # 推送主分支
       - name: push main
