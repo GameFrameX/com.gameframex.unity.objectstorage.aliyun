@@ -24,6 +24,15 @@ jobs:
         with:
           host: gitcode.net
           private-key: ${{ secrets.GITCODE_ID_RSA }}
+      # 设置 SSH
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.GITCODE_ID_RSA }}" >> ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          eval $(ssh-agent -s) && ssh-add ~/.ssh/id_rsa
+          # 信任域名
+          ssh-keyscan -H gitcode.net >> ~/.ssh/known_hosts
       # 同步GIT
       - name: Sync To GitCode
         uses: AlianBlank/github.sync.image@1.0.7
