@@ -33,6 +33,19 @@ jobs:
       #     eval $(ssh-agent -s) && ssh-add ~/.ssh/id_rsa
       #     # 信任域名
       #     ssh-keyscan -H gitcode.net >> ~/.ssh/known_hosts
+
+      # 同步GIT
+      - name: Sync To GITLINK
+        uses: AlianBlank/github.sync.image@1.0.16
+        with:
+          SSH_ID_RSA: ${{ secrets.GITLINK_ID_RSA }}
+          KNOWN_HOSTS: code.gitlink.org.cn
+          REMOTE_NAME: gitlink
+          REPOSITORY_URL: ${{ github.Repository }}
+          BRANCH_NAME: ${{ github.ref.name }}
+          GIT_EMAIL: wangfj11@foxmail.com
+          GIT_NAME: AlianBlank
+      
       # 同步GIT
       - name: Sync To GitCode
         uses: AlianBlank/github.sync.image@1.0.16
