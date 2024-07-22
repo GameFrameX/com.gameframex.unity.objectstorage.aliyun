@@ -53,8 +53,8 @@ jobs:
         run: | 
           if [ "${{ github.ref_name }}" ]; then
           git checkout ${{ github.ref_name }}
-          git pull --progress -v --no-rebase atomgit ${{ github.ref_name }} --tags --verbose || echo 远端不存在${{ github.ref_name }}分支;
-          git push -u atomgit ${{ github.ref_name }} --tags --verbose
+          git pull --progress -v --no-rebase gitlink ${{ github.ref_name }} --tags --verbose || echo 远端不存在${{ github.ref_name }}分支;
+          git push -u gitlink ${{ github.ref_name }} --tags --verbose
           fi
 
   sync-gitlab:
@@ -99,8 +99,8 @@ jobs:
         run: | 
           if [ "${{ github.ref_name }}" ]; then
           git checkout ${{ github.ref_name }}
-          git pull --progress -v --no-rebase atomgit ${{ github.ref_name }} --tags --verbose || echo 远端不存在${{ github.ref_name }}分支;
-          git push -u atomgit ${{ github.ref_name }} --tags --verbose
+          git pull --progress -v --no-rebase gitlab ${{ github.ref_name }} --tags --verbose || echo 远端不存在${{ github.ref_name }}分支;
+          git push -u gitlab ${{ github.ref_name }} --tags --verbose
           fi
 
   sync-gitee:
@@ -145,8 +145,8 @@ jobs:
         run: | 
           if [ "${{ github.ref_name }}" ]; then
           git checkout ${{ github.ref_name }}
-          git pull --progress -v --no-rebase atomgit ${{ github.ref_name }} --tags --verbose || echo 远端不存在${{ github.ref_name }}分支;
-          git push -u atomgit ${{ github.ref_name }} --tags --verbose
+          git pull --progress -v --no-rebase gitee ${{ github.ref_name }} --tags --verbose || echo 远端不存在${{ github.ref_name }}分支;
+          git push -u gitee ${{ github.ref_name }} --tags --verbose
           fi
 
   sync-atomgit:
