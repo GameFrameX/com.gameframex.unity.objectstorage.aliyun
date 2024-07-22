@@ -19,7 +19,7 @@ jobs:
           fetch-depth: 0 # 为了 git pull --unshallow，我们需要获取所有的提交历史
   
       - name: Sync To GitCode
-        uses: AlianBlank/github.sync.image@1.0.2
+        uses: AlianBlank/github.sync.image@1.0.3
         with:
           SSH_ID_RSA: ${{ secrets.GITCODE_ID_RSA }}
           KNOWN_HOSTS: gitcode.net
