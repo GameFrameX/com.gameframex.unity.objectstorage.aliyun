@@ -19,26 +19,29 @@ jobs:
           fetch-depth: 0 # 为了 git pull --unshallow，我们需要获取所有的提交历史
 
       # 设置 SSH
-      - name: Setup SSH
-        uses: MrSquaare/ssh-setup-action@v3
-        with:
-          host: gitcode.net
-          private-key: ${{ secrets.GITCODE_ID_RSA }}
+      # - name: Setup SSH
+      #   uses: MrSquaare/ssh-setup-action@v3
+      #   with:
+      #     host: gitcode.net
+      #     private-key: ${{ secrets.GITCODE_ID_RSA }}
       # 设置 SSH
-      - name: Setup SSH
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.GITCODE_ID_RSA }}" >> ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          eval $(ssh-agent -s) && ssh-add ~/.ssh/id_rsa
-          # 信任域名
-          ssh-keyscan -H gitcode.net >> ~/.ssh/known_hosts
+      # - name: Setup SSH
+      #   run: |
+      #     mkdir -p ~/.ssh
+      #     echo "${{ secrets.GITCODE_ID_RSA }}" >> ~/.ssh/id_rsa
+      #     chmod 600 ~/.ssh/id_rsa
+      #     eval $(ssh-agent -s) && ssh-add ~/.ssh/id_rsa
+      #     # 信任域名
+      #     ssh-keyscan -H gitcode.net >> ~/.ssh/known_hosts
       # 同步GIT
       - name: Sync To GitCode
         uses: AlianBlank/github.sync.image@1.0.7
         with:
-          REMOTE_NAME: gitcode
+          SSH_ID_RSA: ${{ secrets.GITCODE_ID_RSA }}
           KNOWN_HOSTS: gitcode.net
+          REMOTE_NAME: gitcode
+          REPOSITORY_URL: ${{ github.Repository }}
+          BRANCH_NAME: ${{ github.ref.name }}
           GIT_EMAIL: wangfj11@foxmail.com
           GIT_NAME: AlianBlank
 
