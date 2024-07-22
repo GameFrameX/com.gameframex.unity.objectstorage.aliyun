@@ -216,17 +216,17 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           eval $(ssh-agent -s) && ssh-add ~/.ssh/id_rsa
           # 信任域名
-          ssh-keyscan -H gitcode.com >> ~/.ssh/known_hosts
+          ssh-keyscan -H gitcode.net >> ~/.ssh/known_hosts
       # 查看当前分支
       - name: Check current branch
         run: echo 当前分支：${{ github.ref_name }} ${{ github.Repository }}
       # 查看远端 地址
       - name: echo git url
-        run: echo git@gitcode.com:${{ github.Repository }}.git
+        run: echo git@gitcode.net:${{ github.Repository }}.git
 
       # 添加远端
       - name: add remote url
-        run: git remote add gitcode "git@gitcode.com:${{ github.Repository }}.git"
+        run: git remote add gitcode "git@gitcode.net:${{ github.Repository }}.git"
 
       # 获取
       - name: fetch
