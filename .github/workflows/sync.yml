@@ -187,7 +187,7 @@ jobs:
       - name: pull and push
         run: | 
           if [ "${{ github.ref_name }}" ]; then
-          git checkout -b ${{ github.ref_name }}
+          git checkout ${{ github.ref_name }}
           git pull --progress -v --no-rebase atomgit ${{ github.ref_name }} --tags --verbose || echo 远端不存在${{ github.ref_name }}分支;
           git push -u atomgit ${{ github.ref_name }} --tags --verbose
           fi
