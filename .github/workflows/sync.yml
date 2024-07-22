@@ -35,7 +35,7 @@ jobs:
       #     ssh-keyscan -H gitcode.net >> ~/.ssh/known_hosts
       # 同步GIT
       - name: Sync To GitCode
-        uses: AlianBlank/github.sync.image@1.0.15
+        uses: AlianBlank/github.sync.image@1.0.16
         with:
           SSH_ID_RSA: ${{ secrets.GITCODE_ID_RSA }}
           KNOWN_HOSTS: gitcode.net
