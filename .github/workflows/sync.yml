@@ -17,11 +17,18 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0 # 为了 git pull --unshallow，我们需要获取所有的提交历史
-  
-      - name: Sync To GitCode
-        uses: AlianBlank/github.sync.image@1.0.5
+
+      # 设置 SSH
+      - name: Setup SSH
+        uses: MrSquaare/ssh-setup-action@v3
         with:
-          SSH_ID_RSA: ${{ secrets.GITCODE_ID_RSA }}
-          KNOWN_HOSTS: gitcode.net
+          host: gitcode.net
+          private-key: ${{ secrets.GITCODE_ID_RSA }}
+      # 同步GIT
+      - name: Sync To GitCode
+        uses: AlianBlank/github.sync.image@1.0.7
+        with:
+          REMOTE_NAME: gitcode
           GIT_EMAIL: wangfj11@foxmail.com
           GIT_NAME: AlianBlank
+
