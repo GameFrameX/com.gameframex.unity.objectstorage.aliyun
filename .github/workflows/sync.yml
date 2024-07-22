@@ -1,0 +1,55 @@
+name: Sync Github To Image
+
+on:
+  push:
+    branches: [main]
+  #schedule:
+    # 定时任务，每天 UTC 时间 0 点运行
+    #- cron: "0 0 * * *"
+  #workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0 # 为了 git pull --unshallow，我们需要获取所有的提交历史
+
+      - name: Set up Git user
+        run: |
+          git config --global user.email "wangfj11@foxmail.com"
+          git config --global user.name "AlianBlank"
+
+      - name: Set SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.GITCODE_ID_RSA }}" >> ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          eval $(ssh-agent -s) && ssh-add ~/.ssh/id_rsa
+          # 信任域名
+          ssh-keyscan -H gitcode.net >> ~/.ssh/known_hosts
+      # 查看当前分支
+      - name: Check current branch
+        run: echo 当前分支：${{ github.ref.name }} ${{ github.Repository }}
+      # 查看远端 地址
+      - name: echo git url
+        run: echo git@gitcode.net:${{ github.Repository }}.git
+        
+      # 添加远端
+      - name: add remote url
+        run: git remote add gitcode "git@gitcode.net:${{ github.Repository }}.git"
+
+      # 获取
+      - name: fetch
+        run: git fetch --prune gitcode --tags --verbose
+
+      # 拉取
+      - name: pull main
+        run: git pull --rebase=false gitcode main --tags --verbose
+
+      # 推送主分支
+      - name: push main
+        run: git push gitcode refs/heads/main:refs/heads/main --tags --verbose
