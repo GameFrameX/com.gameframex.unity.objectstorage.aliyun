@@ -29,6 +29,7 @@ jobs:
         uses: AlianBlank/github.sync.image@1.0.7
         with:
           REMOTE_NAME: gitcode
+          KNOWN_HOSTS: gitcode.net
           GIT_EMAIL: wangfj11@foxmail.com
           GIT_NAME: AlianBlank
 
