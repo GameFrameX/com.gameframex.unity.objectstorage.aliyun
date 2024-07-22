@@ -184,9 +184,10 @@ jobs:
         run: git fetch --prune atomgit --tags --verbose
 
       # 拉取
-      - name: pull main
-        run: git pull --progress -v --no-rebase atomgit ${{ github.ref_name }} --tags --verbose
-
-      # 推送主分支
-      - name: push main
-        run: git push -u atomgit ${{ github.ref_name }} --tags --verbose
+      - name: pull and push
+        run: | 
+          if [ "${{ github.ref_name }}" ]; then
+          git checkout -b ${{ github.ref_name }}
+          git pull --progress -v --no-rebase atomgit ${{ github.ref_name }} --tags --verbose || echo 远端不存在${{ github.ref_name }}分支;
+          git push -u atomgit ${{ github.ref_name }} --tags --verbose
+          fi
