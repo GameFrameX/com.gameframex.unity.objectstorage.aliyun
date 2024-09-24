@@ -1,10 +1,11 @@
 {
-    "name": "GameFrameX.ObjectStorage.ALiYun.Runtime",
-    "rootNamespace": "GameFrameX.ObjectStorage.ALiYun.Runtime",
+    "name": "GameFrameX.ObjectStorage.ALiYun.Editor",
     "references": [
-        "GameFrameX.ObjectStorage.Runtime"
+        "GameFrameX.ObjectStorage.Editor"
     ],
-    "includePlatforms": [],
+    "includePlatforms": [
+        "Editor"
+    ],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": true,

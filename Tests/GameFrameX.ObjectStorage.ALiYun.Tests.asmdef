@@ -3,7 +3,8 @@
     "references": [
         "GameFrameX.ObjectStorage.Editor",
         "GameFrameX.ObjectStorage.ALiYun.Runtime",
-        "GameFrameX.ObjectStorage.Runtime"
+        "GameFrameX.ObjectStorage.Runtime",
+        "GameFrameX.ObjectStorage.ALiYun.Editor"
     ],
     "rootNamespace": "GameFrameX.ObjectStorage.ALiYun.Tests",
     "includePlatforms": [

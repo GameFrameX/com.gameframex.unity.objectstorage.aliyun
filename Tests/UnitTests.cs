@@ -1,6 +1,5 @@
-using System;
 using GameFrameX.ObjectStorage.ALiYun.Runtime;
-using GameFrameX.ObjectStorage.Runtime;
+using GameFrameX.ObjectStorage.Editor;
 using NUnit.Framework;
 
 namespace GameFrameX.ObjectStorage.ALiYun.Tests

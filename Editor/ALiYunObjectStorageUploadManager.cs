@@ -4,7 +4,7 @@ using System.Net;
 using Aliyun.OSS;
 using Aliyun.OSS.Common;
 using Aliyun.OSS.Util;
-using GameFrameX.ObjectStorage.Runtime;
+using GameFrameX.ObjectStorage.Editor;
 using UnityEngine;
 
 namespace GameFrameX.ObjectStorage.ALiYun.Runtime
@@ -74,6 +74,34 @@ namespace GameFrameX.ObjectStorage.ALiYun.Runtime
 
                 UploadDirectoryInternal(directory.FullName);
             }
+        }
+
+        protected override bool UploadFileInternal(string localFilePathAndName)
+        {
+            FileInfo fileInfo = new FileInfo(localFilePathAndName);
+            if (fileInfo.Exists)
+            {
+                var savePath = BucketSavePath + fileInfo.FullName.Substring(UploadRootPath.Length);
+                string md5;
+                using (var fs = File.Open(fileInfo.FullName, FileMode.Open))
+                {
+                    md5 = OssUtils.ComputeContentMd5(fs, fs.Length);
+                }
+
+                var meta = new ObjectMetadata() { ContentMd5 = md5 };
+                var result = _client.PutObject(_bucketName, savePath, fileInfo.FullName, meta);
+                if (result.HttpStatusCode != HttpStatusCode.OK)
+                {
+                    Debug.LogError($"上传文件失败,本地文件路径：{fileInfo.FullName}\n 目标存储路径:{savePath}");
+                    Debug.LogError(result.ToString());
+                    return false;
+                }
+
+                return true;
+            }
+
+            Debug.LogError($"上传文件失败,本地文件路径：{fileInfo.FullName} 不存在");
+            return false;
         }
     }
 }
