@@ -3,7 +3,7 @@
   "displayName": "Game Frame X Object Storage ALiYun OSS",
   "category": "Game Framework X",
   "description": "Game Frame X Object Storage ALiYun OSS Component",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "unity": "2017.1",
   "keywords": [
     "Game Framework X"
@@ -18,6 +18,5 @@
     "email": "alianblank@outlook.com",
     "url": "https://alianblank.com/"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
