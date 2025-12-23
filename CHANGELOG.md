@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/gameframex/com.gameframex.unity.objectstorage.aliyun/compare/1.0.2...1.1.0) (2025-12-23)
+
+
+### Features
+
+* **ci:** change ci ([4f33e08](https://github.com/gameframex/com.gameframex.unity.objectstorage.aliyun/commit/4f33e08965b832e389fe09784f47728385cb1447))
+
 # Changelog
 
 ## [1.0.2](https://github.com/GameFrameX/com.gameframex.unity.objectstorage.aliyun/tree/1.0.2) (2025-06-01)
