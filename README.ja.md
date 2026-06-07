@@ -1,34 +1,24 @@
-<p align="center">
-  <img src="https://download.alianblank.com/gameframex/gameframex_logo_320.png" alt="GameFrameX Logo" width="160" />
-</p>
+<div align="center">
 
-<h1 align="center">Game Frame X Object Storage ALiYun OSS</h1>
+<img src="https://download.alianblank.com/gameframex/gameframex_logo_320.png" alt="Game Frame X Logo" width="160" />
 
-<p align="center">
-  <a href="https://github.com/GameFrameX/com.gameframex.unity.objectstorage.aliyun/releases">
-    <img src="https://img.shields.io/github/v/release/GameFrameX/com.gameframex.unity.objectstorage.aliyun" alt="Version" />
-  </a>
-  <a href="https://github.com/GameFrameX/com.gameframex.unity.objectstorage.aliyun/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/GameFrameX/com.gameframex.unity.objectstorage.aliyun" alt="License" />
-  </a>
-  <a href="https://gameframex.doc.alianblank.com">
-    <img src="https://img.shields.io/badge/Documentation-online-blue" alt="Documentation" />
-  </a>
-</p>
+# Game Frame X Object Storage ALiYun OSS
 
-<p align="center">
-  インディゲーム開発者向けオールインワンソリューション · インディ開発者の夢を支援
-</p>
+[![License](https://img.shields.io/github/license/GameFrameX/com.gameframex.unity.objectstorage.aliyun)](https://github.com/GameFrameX/com.gameframex.unity.objectstorage.aliyun/blob/main/LICENSE.md)
+[![Version](https://img.shields.io/github/v/release/GameFrameX/com.gameframex.unity.objectstorage.aliyun)](https://github.com/GameFrameX/com.gameframex.unity.objectstorage.aliyun/releases)
+[![Documentation](https://img.shields.io/badge/Documentation-docs-blue)](https://gameframex.doc.alianblank.com)
 
-<p align="center">
-  <a href="https://gameframex.doc.alianblank.com">ドキュメント</a> ·
-  <a href="#クイックスタート">クイックスタート</a> ·
-  <a href="https://qm.qq.com/cgi-bin/qm/qr?k=ikT9gA5m2sKwOyNOfYmQvSAPK_c3GmD6">QQグループ</a> ·
-  言語: <a href="README.md">English</a> | <a href="README.zh-CN.md">简体中文</a> | <a href="README.zh-TW.md">繁體中文</a> | <strong>日本語</strong> | <a href="README.ko.md">한국어</a>
-</p>
+インディゲーム開発者向けオールインワンソリューション · インディ開発者の夢を支援
 
----
+<br />
 
+[ドキュメント](https://gameframex.doc.alianblank.com) · [クイックスタート](#クイックスタート) · [QQグループ](https://qm.qq.com/cgi-bin/qm/qr?k=ikT9gA5m2sKwOyNOfYmQvSAPK_c3GmD6)
+
+<br />
+
+[English](README.md) | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | **日本語** | [한국어](README.ko.md)
+
+</div>
 ## プロジェクト概要
 
 **Object Storage ALiYun OSS コンポーネント** - Object Storage コンポーネントの Alibaba Cloud（ALiYun）オブジェクトストレージサービス（OSS）実装を提供します。このパッケージは ALiYun OSS のアップロードマネージャーを実装し、ファイルやディレクトリの ALiYun OSS バケットへのアップロードを可能にします。
