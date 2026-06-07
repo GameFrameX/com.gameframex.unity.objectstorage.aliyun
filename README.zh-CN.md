@@ -57,7 +57,6 @@ Then add the package to `dependencies`:
 }
 ```
 
-
 ## 平台支持
 
 | 平台 | 支持 |
@@ -79,4 +78,4 @@ Then add the package to `dependencies`:
 
 ## 开源协议
 
-本项目基于 [LICENSE](LICENSE) 文件中定义的条款授权。
+详见 [LICENSE.md](LICENSE.md) 文件。
