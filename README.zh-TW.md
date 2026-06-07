@@ -77,6 +77,17 @@ Then add the package to `dependencies`:
 
 - QQ群：透過 [二維碼](https://qm.qq.com/cgi-bin/qm/qr?k=ikT9gA5m2sKwOyNOfYmQvSAPK_c3GmD6) 加入
 
+
+## 依賴
+
+| 套件 | 說明 |
+|------|------|
+| (无) | - |
+
+
+## 更新日誌
+
+查看 [Releases](https://github.com/GameFrameX/gameframex/com.gameframex.unity.objectstorage.aliyun/releases) 了解更新日誌。
 ## 開源協議
 
 本專案基於 [LICENSE](LICENSE) 文件中定義的條款授權。
