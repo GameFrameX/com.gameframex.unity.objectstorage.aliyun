@@ -29,18 +29,34 @@
 
 ### インストール
 
-以下のいずれかの方法を選択してください：
+Unity プロジェクトの `Packages/manifest.json` を編集し、`scopedRegistries` セクションを追加してください：
 
-1. プロジェクトの `manifest.json` の `dependencies` セクションに以下を追加：
-   ```json
-   {"com.gameframex.unity.objectstorage.aliyun": "https://github.com/AlianBlank/com.gameframex.unity.objectstorage.aliyun.git"}
-   ```
-2. Unity の `Package Manager` で `Git URL` を使用して追加：https://github.com/AlianBlank/com.gameframex.unity.objectstorage.aliyun.git
-3. リポジトリをダウンロードして Unity プロジェクトの `Packages` ディレクトリに配置（自動的に読み込まれます）。
+```json
+{
+  "scopedRegistries": [
+    {
+      "name": "GameFrameX",
+      "url": "https://gameframex.upm.alianblank.uk",
+      "scopes": [
+        "com.gameframex"
+      ]
+    }
+  ]
+}
+```
 
-### 使用例
+`scopes` は、どのパッケージをこのレジストリから解決するかを制御します。`com.gameframex` で始まるパッケージのみがこのレジストリから取得されます。
 
-親コンポーネント [Object Storage](https://github.com/GameFrameX/com.gameframex.unity.objectstorage) の使用方法を参照してください。
+Then add the package to `dependencies`:
+
+```json
+{
+  "dependencies": {
+    "com.gameframex.unity.objectstorage.aliyun": "1.1.0"
+  }
+}
+```
+
 
 ## プラットフォーム対応
 
