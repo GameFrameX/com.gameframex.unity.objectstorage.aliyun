@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/gameframex/com.gameframex.unity.objectstorage.aliyun/compare/1.1.0...1.1.1) (2026-06-08)
+
+
+### Bug Fixes
+
+* 补全包规范文件（LICENSE/CHANGELOG/URL 字段/unity 字段） ([b4877f8](https://github.com/gameframex/com.gameframex.unity.objectstorage.aliyun/commit/b4877f814281634cc2b3bb5b5ef8f38ee1cce221))
+
 # [1.1.0](https://github.com/gameframex/com.gameframex.unity.objectstorage.aliyun/compare/1.0.2...1.1.0) (2025-12-23)
 
 
