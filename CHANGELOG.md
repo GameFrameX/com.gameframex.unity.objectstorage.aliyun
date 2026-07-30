@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/gameframex/com.gameframex.unity.objectstorage.aliyun/compare/1.1.1...1.2.0) (2026-07-30)
+
+
+### Features
+
+* 添加依赖项 com.gameframex.unity.objectstorage 版本 1.1.1 ([80d93d9](https://github.com/gameframex/com.gameframex.unity.objectstorage.aliyun/commit/80d93d93ada5f7beb0eb64d47e7bfb464f3e247e))
+
 ## [1.1.1](https://github.com/gameframex/com.gameframex.unity.objectstorage.aliyun/compare/1.1.0...1.1.1) (2026-06-08)
 
 
