@@ -16,9 +16,11 @@ namespace GameFrameX.ObjectStorage.ALiYun.Tests
         }
 
         [Test]
-        public void TestUpload()
+        public void Create_ReturnsAliyunUploadManager()
         {
-            _manager.UploadDirectory("./");
+            // 工厂按类型参数创建阿里云上传管理器：本地凭证构造，无网络 I/O。
+            Assert.IsNotNull(_manager);
+            Assert.IsInstanceOf<ALiYunObjectStorageUploadManager>(_manager);
         }
     }
 }
