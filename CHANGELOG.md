@@ -1,3 +1,15 @@
+# [1.3.0](https://github.com/gameframex/com.gameframex.unity.objectstorage.aliyun/compare/1.2.0...1.3.0) (2026-10-15)
+
+
+### Bug Fixes
+
+* **tests:** 将阿里云上传测试改为工厂类型验证 ([4b00a77](https://github.com/gameframex/com.gameframex.unity.objectstorage.aliyun/commit/4b00a7730e863e3dd96b1347bb56994660ab9878))
+
+
+### Features
+
+* **runtime:** 渠道实现迁移对齐核心包 Runtime 抽象 ([f6574c5](https://github.com/gameframex/com.gameframex.unity.objectstorage.aliyun/commit/f6574c537bd6b247e4d445d3ae7e6a5bca5706fd))
+
 # [1.2.0](https://github.com/gameframex/com.gameframex.unity.objectstorage.aliyun/compare/1.1.1...1.2.0) (2026-07-30)
 
 
