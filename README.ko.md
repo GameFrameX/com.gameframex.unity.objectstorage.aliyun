@@ -23,7 +23,34 @@
 
 ## 프로젝트 개요
 
-**Object Storage ALiYun OSS 컴포넌트** - Object Storage 컴포넌트의 Alibaba Cloud(ALiYun) 오브젝트 스토리지 서비스(OSS) 구현을 제공합니다. 이 패키지는 ALiYun OSS 업로드 매니저를 구현하여 파일 및 디렉토리를 ALiYun OSS 버킷에 업로드할 수 있게 합니다.
+**Object Storage ALiYun OSS 컴포넌트** - Object Storage 컴포넌트의 Alibaba Cloud(ALiYun) 오브젝트 스토리지 서비스(OSS) 구현을 제공합니다. 이 패키지는 `ALiYunObjectStorageManager`를 구현하여 런타임과 에디터 모두에서 파일 및 디렉토리를 ALiYun OSS 버킷으로 업로드/다운로드할 수 있게 합니다. ALiYun OSS SDK는 Plugins에 포함되어 있습니다.
+
+## 사용 예시
+
+```csharp
+using GameFrameX.ObjectStorage.Runtime;
+using GameFrameX.ObjectStorage.ALiYun.Runtime;
+
+// 팩토리로 매니저 생성 및 초기화
+IObjectStorageManager manager = ObjectStorageManagerFactory.Create<ALiYunObjectStorageManager>(new ObjectStorageOptions
+{
+    AccessKey = "your-access-key",
+    SecretKey = "your-secret-key",
+    BucketName = "your-bucket",
+    Endpoint = "oss-cn-shenzhen.aliyuncs.com",  // ALiYun 필수
+    SavePath = "bundles/android",
+});
+
+// 단일 파일 업로드 (객체 키 = SavePath + 파일명)
+manager.UploadFile(new ObjectStorageUploadOptions { LocalPath = "local/file.bundle" });
+
+// 단일 객체 다운로드 (로컬 디렉토리 자동 생성)
+manager.DownloadFile(new ObjectStorageDownloadOptions
+{
+    ObjectKey = "bundles/android/file.bundle",
+    LocalPath = "downloads/file.bundle",
+});
+```
 
 ## 빠른 시작
 

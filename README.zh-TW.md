@@ -23,7 +23,34 @@
 
 ## 項目簡介
 
-**Object Storage 阿里雲 OSS 組件** - 提供 Object Storage 組件的阿里雲物件儲存服務（OSS）實作。本套件實作了阿里雲 OSS 的上傳管理器，允許您上傳檔案和目錄到阿里雲 OSS 儲存桶。
+**Object Storage 阿里雲 OSS 組件** - 提供 Object Storage 組件的阿里雲物件儲存服務（OSS）實作。本套件實作了 `ALiYunObjectStorageManager`，執行時與編輯器均支援上傳、下載檔案和目錄到/從阿里雲 OSS 儲存桶，阿里雲 OSS SDK 位於 Plugins 目錄。
+
+## 使用範例
+
+```csharp
+using GameFrameX.ObjectStorage.Runtime;
+using GameFrameX.ObjectStorage.ALiYun.Runtime;
+
+// 透過工廠建立並初始化管理器
+IObjectStorageManager manager = ObjectStorageManagerFactory.Create<ALiYunObjectStorageManager>(new ObjectStorageOptions
+{
+    AccessKey = "your-access-key",
+    SecretKey = "your-secret-key",
+    BucketName = "your-bucket",
+    Endpoint = "oss-cn-shenzhen.aliyuncs.com",  // 阿里雲必填
+    SavePath = "bundles/android",
+});
+
+// 上傳單一檔案（物件鍵 = SavePath + 檔名）
+manager.UploadFile(new ObjectStorageUploadOptions { LocalPath = "local/file.bundle" });
+
+// 下載單一物件（自動建立本地目錄）
+manager.DownloadFile(new ObjectStorageDownloadOptions
+{
+    ObjectKey = "bundles/android/file.bundle",
+    LocalPath = "downloads/file.bundle",
+});
+```
 
 ## 快速開始
 

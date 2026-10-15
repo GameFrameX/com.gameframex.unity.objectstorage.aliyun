@@ -23,7 +23,34 @@
 
 ## プロジェクト概要
 
-**Object Storage ALiYun OSS コンポーネント** - Object Storage コンポーネントの Alibaba Cloud（ALiYun）オブジェクトストレージサービス（OSS）実装を提供します。このパッケージは ALiYun OSS のアップロードマネージャーを実装し、ファイルやディレクトリの ALiYun OSS バケットへのアップロードを可能にします。
+**Object Storage ALiYun OSS コンポーネント** - Object Storage コンポーネントの Alibaba Cloud（ALiYun）オブジェクトストレージサービス（OSS）実装を提供します。このパッケージは `ALiYunObjectStorageManager` を実装し、ランタイムとエディタの両方でファイルやディレクトリの ALiYun OSS バケットへのアップロード・ダウンロードを可能にします。ALiYun OSS SDK は Plugins 以下に同梱されています。
+
+## 使用例
+
+```csharp
+using GameFrameX.ObjectStorage.Runtime;
+using GameFrameX.ObjectStorage.ALiYun.Runtime;
+
+// ファクトリでマネージャーを作成・初期化
+IObjectStorageManager manager = ObjectStorageManagerFactory.Create<ALiYunObjectStorageManager>(new ObjectStorageOptions
+{
+    AccessKey = "your-access-key",
+    SecretKey = "your-secret-key",
+    BucketName = "your-bucket",
+    Endpoint = "oss-cn-shenzhen.aliyuncs.com",  // ALiYun では必須
+    SavePath = "bundles/android",
+});
+
+// 単一ファイルのアップロード（オブジェクトキー = SavePath + ファイル名）
+manager.UploadFile(new ObjectStorageUploadOptions { LocalPath = "local/file.bundle" });
+
+// 単一オブジェクトのダウンロード（ローカルディレクトリは自動作成）
+manager.DownloadFile(new ObjectStorageDownloadOptions
+{
+    ObjectKey = "bundles/android/file.bundle",
+    LocalPath = "downloads/file.bundle",
+});
+```
 
 ## クイックスタート
 

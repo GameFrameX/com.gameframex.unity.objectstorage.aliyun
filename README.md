@@ -23,7 +23,34 @@ All-in-One Solution for Indie Game Development · Empowering Indie Developers' D
 
 ## Project Overview
 
-**Object Storage ALiYun OSS Component** - Provides the Alibaba Cloud (ALiYun) Object Storage Service (OSS) implementation for the Object Storage component. This package implements the upload manager for ALiYun OSS, allowing you to upload files and directories to ALiYun OSS buckets.
+**Object Storage ALiYun OSS Component** - Provides the Alibaba Cloud (ALiYun) Object Storage Service (OSS) implementation for the Object Storage component. This package implements `ALiYunObjectStorageManager`, allowing you to upload and download files and directories to and from ALiYun OSS buckets in both runtime and editor builds. The ALiYun OSS SDK is shipped under Plugins.
+
+## Usage
+
+```csharp
+using GameFrameX.ObjectStorage.Runtime;
+using GameFrameX.ObjectStorage.ALiYun.Runtime;
+
+// Create and initialize the manager through the factory
+IObjectStorageManager manager = ObjectStorageManagerFactory.Create<ALiYunObjectStorageManager>(new ObjectStorageOptions
+{
+    AccessKey = "your-access-key",
+    SecretKey = "your-secret-key",
+    BucketName = "your-bucket",
+    Endpoint = "oss-cn-shenzhen.aliyuncs.com",  // required for ALiYun
+    SavePath = "bundles/android",
+});
+
+// Upload a single file (object key = SavePath + file name)
+manager.UploadFile(new ObjectStorageUploadOptions { LocalPath = "local/file.bundle" });
+
+// Download a single object (local directories are created automatically)
+manager.DownloadFile(new ObjectStorageDownloadOptions
+{
+    ObjectKey = "bundles/android/file.bundle",
+    LocalPath = "downloads/file.bundle",
+});
+```
 
 ## Quick Start
 
