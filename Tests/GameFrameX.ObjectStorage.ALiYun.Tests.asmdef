@@ -1,10 +1,8 @@
 {
     "name": "GameFrameX.ObjectStorage.ALiYun.Tests",
     "references": [
-        "GameFrameX.ObjectStorage.Editor",
-        "GameFrameX.ObjectStorage.ALiYun.Runtime",
         "GameFrameX.ObjectStorage.Runtime",
-        "GameFrameX.ObjectStorage.ALiYun.Editor"
+        "GameFrameX.ObjectStorage.ALiYun.Runtime"
     ],
     "rootNamespace": "GameFrameX.ObjectStorage.ALiYun.Tests",
     "includePlatforms": [
@@ -17,5 +15,6 @@
     "autoReferenced": true,
     "defineConstraints": [],
     "versionDefines": [],
-    "noEngineReferences": false
+    "noEngineReferences": false,
+    "testAssemblies": true
 }
