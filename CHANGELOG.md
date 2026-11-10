@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/gameframex/com.gameframex.unity.objectstorage.aliyun/compare/1.3.0...1.3.1) (2026-11-10)
+
+
+### Bug Fixes
+
+* **objectstorage.aliyun:** 添加完整 link.xml 防代码裁剪保护 ([4570e44](https://github.com/gameframex/com.gameframex.unity.objectstorage.aliyun/commit/4570e4496d20e7bde5258591fa74892bc1893b50))
+
 # [1.3.0](https://github.com/gameframex/com.gameframex.unity.objectstorage.aliyun/compare/1.2.0...1.3.0) (2026-10-15)
 
 
